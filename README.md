@@ -4,5 +4,10 @@ SwiftUI application helping you keep track of features and issues, locally store
 ## Main features
  - Create *draft* tickets based on new ideas, before deciding whether to implement them as code, shared with your team or the public.
 
-## System requirements
+## System requirements: verified hardware
+- M1 Mac
+- Latest patch update of macOS 14 Sonoma
+- Xcode 15.3
+
+## System requirements: minimum hardware
 Draft.
