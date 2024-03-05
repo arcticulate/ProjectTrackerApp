@@ -148,7 +148,6 @@ struct TicketSection: View {
             Section(title) {
                 if tickets.count > 0 {
                 ForEach(tickets) { ticket in
-                    //ForEach($model.tickets) { $ticket in
                         HStack {
                             Label(
                                 title: { Text(ticket.title) },

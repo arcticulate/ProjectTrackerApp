@@ -10,11 +10,17 @@ import SwiftUI
 struct NewTicketView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var ticket: Ticket = Ticket()
+    @State private var tempAppsList: String = ""
     @Binding var tickets: [Ticket]
     var format: DateFormatter {
         let formatter: DateFormatter = DateFormatter()
         formatter.dateStyle = .medium
         return formatter
+    }
+    
+    private func setOtherApps() {
+        ticket.otherAppsRunning = tempAppsList.components(separatedBy: ",")
+        print(ticket.otherAppsRunning)
     }
     
     var body: some View {
@@ -44,12 +50,17 @@ struct NewTicketView: View {
                         .border(Material.thick, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
                         .textFieldStyle(.roundedBorder)
                     #endif
+                    TextField("Other apps", text: $tempAppsList)
+                        .onSubmit {
+                            setOtherApps()
+                        }
                 }
             }
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Add") {
                         tickets.append(ticket)
+                        setOtherApps()
                         dismiss()
                     }
                 }
