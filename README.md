@@ -13,4 +13,9 @@ SwiftUI application helping you keep track of features and issues, locally store
 Draft.
 
 ## Screenshots
+### Light mode
 ![Screenshot of the ProjectTracker app in macOS, with Light mode enabled.](/Screenshots/ProjectTracker-light-threeColumns.png)
+
+### Dark mode
+![Screenshot of the ProjectTracker app in macOS, with Dark mode enabled.](/Screenshots/ProjectTracker-dark-doubleColumns.png)
+
