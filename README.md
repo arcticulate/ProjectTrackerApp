@@ -10,7 +10,8 @@ SwiftUI application helping you keep track of features and issues, locally store
 - Xcode 15.3
 
 ## System requirements: minimum hardware
-Draft.
+- 64-bit Intel CPU or any Apple Silicon SoC (Apple M1 or newer)
+- macOS 12 Monterey or newer
 
 ## Screenshots
 If you want to know what the app looks like, take a look at the images below. **Note:** As the app evolves over time, the screenshots will need to be updated to reflect the updates.
