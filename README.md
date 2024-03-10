@@ -11,3 +11,6 @@ SwiftUI application helping you keep track of features and issues, locally store
 
 ## System requirements: minimum hardware
 Draft.
+
+## Screenshots
+![Screenshot of the ProjectTracker app in macOS, with Light mode enabled.](/Screenshots/ProjectTracker-light-threeColumns.png)
