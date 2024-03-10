@@ -7,6 +7,25 @@
 
 import SwiftUI
 
+struct AppInfo {
+    var shortVersion: String {
+        let test = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
+        return test
+    }
+    
+    var buildVersion: String {
+        Bundle.main.infoDictionary?["CFBundleVersion"] as! String
+    }
+    
+    var buildName: String {
+        Bundle.main.infoDictionary?["CFBundleName"] as! String
+    }
+    
+    var iconName: String {
+            Bundle.main.infoDictionary?["CFBundleIconName"] as! String
+    }
+}
+
 /// Tracker model: stores multiple tickets.
 struct Tracker: Identifiable, Codable {
     var id: UUID = UUID()
@@ -39,6 +58,8 @@ enum TicketPlatform: String, Hashable, Codable, CaseIterable {
     case pad
     case tv
 }
+
+
 
 /// Ticket model.
 struct Ticket: Identifiable, Hashable, Equatable, Codable {
