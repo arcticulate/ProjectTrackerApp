@@ -141,36 +141,39 @@ struct ContentView: View {
 struct TicketSection: View {
     let title: String
     let tickets: [Ticket]
+    let edges = EdgeInsets(top: 7.5, leading: 10, bottom: 7.5, trailing: 10)
     /// Ticket ID as selection.
     @Binding var selection: Ticket.ID?
+    @State private var ticket: Ticket = Ticket(title: "")
     
     var body: some View {
-            Section(title) {
-                if tickets.count > 0 {
+        Section(title) {
+            if tickets.count > 0 {
                 ForEach(tickets) { ticket in
-                        HStack {
-                            Label(
-                                title: { Text(ticket.title) },
-                                icon: { Image(systemName: ticket.prioritySymbol)
-                                        .fontWeight(.bold)
-                                        .symbolVariant(.none)
-                                        .foregroundStyle(ticket.prioColor, .ultraThinMaterial)
-                                })
-                            Spacer()
-                            Text(ticket.statusText)
-                                .foregroundStyle(.secondary)
-                               
-                        } .listRowInsets(EdgeInsets(top: 7.5, leading: 10, bottom: 7.5, trailing: 10))
-                    }
+                    HStack {
+                        Label(
+                            title: { Text(ticket.title) },
+                            icon: { Image(systemName: ticket.prioritySymbol)
+                                    .fontWeight(.bold)
+                                    .symbolVariant(.none)
+                                    .foregroundStyle(ticket.prioColor, .ultraThinMaterial)
+                            })
+                        Spacer()
+                        Text(ticket.statusText)
+                            .foregroundStyle(.secondary)
+                        
+                    }.listRowInsets(self.edges)
                 }
-                else {
-                    Text("No entries.")
-                        .foregroundStyle(.secondary)
-                        .font(.body)
-                        .italic()
-                }
+               // .searchable(text: $ticket.title)
             }
-            // .searchable(text: $ticket.title)
+            else {
+                Text("No entries.")
+                    .foregroundStyle(.secondary)
+                    .font(.body)
+                    .italic()
+            }
+        }
+           
 #if available
         .navigationBarTitleDisplayMode(.inline)
 #endif
