@@ -40,7 +40,7 @@ struct NewTicketView: View {
                 #if os(macOS)
                 Spacer().frame(height: 20)
                 #endif
-                Section("Details") {
+                Section {
                     TextEditor(text: $ticket.details)
                         .frame(height: 200)
                         .lineSpacing(5)
@@ -54,6 +54,10 @@ struct NewTicketView: View {
                         .onSubmit {
                             setOtherApps()
                         }
+                } header: {
+                    Text("Details")
+                } footer: {
+                    Text("Separate app names with commas.").font(.caption)
                 }
             }
             .toolbar {
